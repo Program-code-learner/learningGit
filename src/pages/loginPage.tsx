@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/context';
 import React from 'react'
 
@@ -5,8 +6,11 @@ import React from 'react'
 
 const loginPage : React.FC = () => {
   const {isAuthenticated,login,logout} = useAuth();
-  const submit=()=>{
+  const navigate = useNavigate();
+  const submit=(e: React.FormEvent)=>{
+    e.preventDefault();
     login();
+    navigate('/')
   }
   return (
     <>
