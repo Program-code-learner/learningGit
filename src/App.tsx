@@ -5,6 +5,7 @@ import { useAuth } from "./context/context";
 import HomePage from "./pages/homePage";
 import loginPage from "./pages/loginPage";
 import PrivateRoute from "./pages/PrivateRoute";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -21,6 +22,15 @@ const App = () => {
           element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          }
+        />
+
+          <Route
+          path="/contact"
+          element={
+            <PrivateRoute>
+              <Contact />
             </PrivateRoute>
           }
         />
