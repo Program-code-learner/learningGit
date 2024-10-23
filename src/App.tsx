@@ -2,19 +2,20 @@ import React, { useContext } from 'react'
 import LoginPage from './pages/loginPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuth } from './context/context';
+import HomePage from './pages/homePage';
 
 
 const App = () => {
   const{isAuthenticated} = useAuth();
 
   return (
-    <div>
+    
       <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path='/' element={isAuthenticated ? <HomePage /> : <LoginPage />} />
       </Routes>
     </Router> 
-    </div>
+     
   )
 }
 
