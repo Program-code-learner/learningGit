@@ -6,9 +6,9 @@ import HomePage from "./pages/homePage";
 import loginPage from "./pages/loginPage";
 import PrivateRoute from "./pages/PrivateRoute";
 import Contact from "./pages/Contact";
+import Table from "./pages/Table";
 
 const App = () => {
-  const { isAuthenticated } = useAuth();
 
   return (
     <Router>
@@ -26,7 +26,7 @@ const App = () => {
           }
         />
 
-          <Route
+        <Route
           path="/contact"
           element={
             <PrivateRoute>
@@ -34,7 +34,15 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        
+
+        <Route
+          path="/table"
+          element={
+            <PrivateRoute>
+              <Table />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );
