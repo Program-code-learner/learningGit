@@ -43,6 +43,8 @@ const App = () => {
             </PrivateRoute>
           }
         />
+
+        <Route path="*" element={<LoginPage />} />
       </Routes>
     </Router>
   );
